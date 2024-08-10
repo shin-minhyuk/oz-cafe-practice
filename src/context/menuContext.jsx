@@ -40,7 +40,7 @@ export const MenuProvider = ({ children }) => {
   const [menu, setMenu] = useState(data.menu);
 
   return (
-    <menuContext.Provider value={[menu, setMenu]}>
+    <menuContext.Provider value={{ menu, setMenu }}>
       {children}
     </menuContext.Provider>
   );

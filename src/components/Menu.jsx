@@ -6,7 +6,7 @@ import { useMenu } from "../context/menuContext";
 function Menu() {
   const [modalOn, setModalOn] = useState(false);
   const [modalMenu, setModalMenu] = useState(null);
-  const [menu, setMenu] = useMenu();
+  const { menu } = useMenu();
 
   if (!menu)
     return (

@@ -5,10 +5,10 @@ import { useCart } from "../context/cartContext";
 function OrderModal({ modalMenu, setModalOn }) {
   const [options, setOptions] = useState({ 온도: 0, 진하기: 0, 사이즈: 0 });
   const [quantity, setQuantity] = useState(1);
-  const [cart, setCart] = useCart();
+  const { cart, addToCart } = useCart();
 
   const itemOptions = data.options;
-  console.log(options);
+  console.log(cart);
   return (
     <>
       {modalMenu ? (
@@ -45,7 +45,7 @@ function OrderModal({ modalMenu, setModalOn }) {
               </div>
               <button
                 onClick={() => {
-                  setCart([...cart, { options, quantity, id: modalMenu.id }]);
+                  addToCart(options, quantity, modalMenu.id);
                   setModalOn(false);
                 }}
               >
